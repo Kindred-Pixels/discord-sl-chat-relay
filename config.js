@@ -3,7 +3,7 @@ const { GatewayIntentBits } = require('discord.js');
 /* config */
 const config = {
 	// Bot Admins, level 9 by default. Array of user ID strings.
-	'admins': ["478280993422442497"],
+	'admins': ["1119133935608287265"],
 
 	// Bot Support, level 8 by default. Array of user ID strings
 	'support': [],
@@ -14,23 +14,21 @@ const config = {
 
 	// //// This maps inworld group UUIDs to Discord Channels.
 	relays: new Map([
-		 ["e38d0caa-2b71-031a-3e1b-4abe1a22e8f3", "1411469523856396359"] // Red Robot Main Group (Client: dark.nebula)
+		 // ["4abab16f-e4d5-f5c3-ed45-e5ddf66c7441", "1195331190572470340"] // Coffee & Coworking - Production
+		 ["da034d39-8288-e1ea-189a-b51424262886", "1198597955335237773"] // Coffee & Coworking - Staging
               	 
- ]),
+        ]),
+
 	// Array of SL UUIDs to Ignore and not relay, say if you have a bot that regularly posts in group chat or something.
 	'ignored': ['49d6a705-de90-4458-b166-ccf56401053c'],
 
 
-	/*
-
-
-Settings for local chat relay
-*/
+	/* Settings for local chat relay */
 
  	// Use Display Names? 
 	'enableDisplayNames': true,
 	// Enable Local Chat Relay
-	'relayLocal': true,
+	'relayLocal': false,
 
 	// Discord Channel to Relay to
 	'relayChannel': '1176658491239305266',
@@ -40,9 +38,15 @@ Settings for local chat relay
   * Intents the bot needs.
   * By default GuideBot needs Guilds and Guild Messages to work.
   */
-	intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ],
+	intents: [ 
+		GatewayIntentBits.Guilds, 
+		GatewayIntentBits.GuildMessages, 
+		GatewayIntentBits.MessageContent, 
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.DirectMessageTyping
+	],
 	// Partials your bot may need should go here, CHANNEL is required for DM's
-	partials: ['CHANNEL'],
+	partials: ['Channel', 'Message'],
 
 
 	// PERMISSION LEVEL DEFINITIONS.
