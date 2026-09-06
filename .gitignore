@@ -8,6 +8,7 @@ config.json
 data/
 test.js
 config.js
+config.js.vault108
 # Runtime data
 pids
 *.pid
