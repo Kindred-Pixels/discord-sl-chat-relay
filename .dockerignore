@@ -1,5 +1,6 @@
 .env
 config.js
+config.js.vault108
 node_modules
 .git
 .github
